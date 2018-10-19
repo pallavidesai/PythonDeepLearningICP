@@ -13,7 +13,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(dataset[:,0:13], dataset[:,1
 np.random.seed(7)
 my_first_nn = Sequential() # create model
 my_first_nn.add(Dense(20, input_dim=13,kernel_initializer='normal', activation='relu')) # hidden layer
-# my_first_nn.add(Dense(32)) # output layer
+my_first_nn.add(Dense(32)) # output layer
+my_first_nn.add(Dense(32)) # output layer
 my_first_nn.add(Dense(1,kernel_initializer='normal', activation='sigmoid')) # output layer
 my_first_nn.compile(loss='mean_squared_error', optimizer='adam')
 my_first_nn_fitted = my_first_nn.fit(X_train, Y_train, epochs=100, verbose=0,
